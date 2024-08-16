@@ -1,0 +1,21 @@
+.NewWidget{
+    position: absolute;
+
+    /* right: 0; */
+    left: 25%;
+    right: 25%;
+    width: 50%;
+    height: 50%;
+    /* top: 1; */
+    background-color: white;
+    
+}
+.close-btn {
+    font-size: 25px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    cursor: pointer;
+    color: red;
+    
+}

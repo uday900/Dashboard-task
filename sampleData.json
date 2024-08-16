@@ -1,0 +1,54 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "category_name": "Programming",
+      "widgets": [
+        {
+          "widget_name": "C",
+          "widget_text": "lan"
+        },
+        {
+          "widget_name": "c#",
+          "widget_text": ".net programming"
+        },
+        {
+          "widget_name": "React",
+          "widget_text": "React is front-end frame work of JS"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category_name": "Countries",
+      "widgets": [
+        {
+          "widget_name": "India",
+          "widget_text": "India is the seventh-largest country by land area, and the second-most populous country in the world."
+        },
+        {
+          "widget_name": "Japan",
+          "widget_text": "Japan is an island country in East Asia, located in the northwest Pacific Ocean. It is known for its rich culture and technological advancements."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category_name": "Sports Persons",
+      "widgets": [
+        {
+          "widget_name": "Lionel Messi",
+          "widget_text": "Lionel Messi is an Argentine professional footballer who plays as a forward. He is often considered the best player in the world and one of the greatest of all time."
+        },
+        {
+          "widget_name": "Serena Williams",
+          "widget_text": "Serena Williams is an American professional tennis player and former world No. 1 in women's single tennis. She is regarded as one of the greatest tennis players of all time."
+        },
+        {
+          "widget_name": "Virat Kohli",
+          "widget_text": "Virat Kohli is an Indian cricketer and former captain of the Indian national team. He is widely regarded as one of the best batsmen of his generation."
+        }
+      ]
+    }
+  ]
+}

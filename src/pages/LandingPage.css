@@ -1,0 +1,13 @@
+.box{
+    /* height: 300px; */
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    background-color: white;
+}
+.starred{
+    color: blue;
+    background-color: blue;
+}
