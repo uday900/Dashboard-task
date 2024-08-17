@@ -50,7 +50,7 @@ function LandingPage() {
                 </div>
             </div>
             {isempty ? (
-                <>Not available</>
+                <>please wait...</>
             ) : (
                 <div>
                     {categories.map((category, index) => (

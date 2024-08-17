@@ -64,12 +64,32 @@ function ManageWidgets({ setisactive_manage_widget }) {
 
     async function handleConfirm() {
         // reflect widgets to dashboard....
-        try {
-            // Create an array of promises for the put requests
-            const response = await axios.get('https://uday-data.onrender.com/app/categories');
-            console.log("data is ", response.data)
-            console.log(dummy_categories)
-            const res = await axios.put('https://uday-data.onrender.com/app/categories', dummy_categories)
+        dummy_categories.forEach((category)=>{
+            var category_present = false;
+
+            categories.forEach((category1)=>{
+                if( category1.category_name == category.category_name){
+                    category_present = true
+                }
+            })
+            try {
+                if (category_present){
+                    axios.put(`https://uday-data.onrender.com/app/categories/${category.id}`, {...category})
+    
+                }else{
+                    axios.post('https://uday-data.onrender.com/app/categories', {...category})
+                }
+                setcategories(dummy_categories)
+            } catch (error) {
+                console.log("error modifying data")
+            }
+        })
+        // try {
+        //     // Create an array of promises for the put requests
+        //     const response = await axios.get('https://uday-data.onrender.com/app/categories');
+        //     console.log("data is ", response.data)
+        //     console.log(dummy_categories)
+        //     const res = await axios.put('https://uday-data.onrender.com/app/categories', dummy_categories)
             // const updatePromises = dummy_categories.map(category =>{
             //     console.log("category", category);
             //     axios.put(`https://uday-data.onrender.com/app/categories/${category.id}`, {
@@ -82,22 +102,17 @@ function ManageWidgets({ setisactive_manage_widget }) {
             // await Promise.all(updatePromises);
     
             // Optionally update the state here if needed
-            setcategories(dummy_categories);
+            // setcategories(dummy_categories);
 
             
-            console.log('Categories updated successfully');
+            // console.log('Categories updated successfully');
             // console.log(categories)
             // console.log(dummy_categories)
-        } catch (error) {
-            console.error('Error updating categories:');
-        }
+        // } catch (error) {
+        //     console.error('Error updating categories:');
+        // }
 
-        // reflect categories to dashboard....
-        try {
-            
-        } catch (error) {
-            
-        }
+       
     
         // Close the manage widgets component
         setisactive_manage_widget(false);
