@@ -51,7 +51,7 @@ function LandingPage() {
             </div>
             {isempty ? (
                 <>please wait...fetching data or you can add categories by dynamically throw 
-                <b>manage widgets</b>.</>
+                <b>manage Categories</b>.</>
             ) : (
                 <div>
                     {categories.map((category, index) => (
