@@ -42,7 +42,7 @@ function LandingPage() {
                     <button    
                         className="btn btn-light"
                         onClick={()=>setisactive_manage_widget(true)}>
-                        Manage widgets
+                        Manage Categories
                     </button>
                     <button className="btn starred">
                         <i className="fa-regular fa-star"></i>
