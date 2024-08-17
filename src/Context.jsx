@@ -10,7 +10,7 @@ function Context({ children }) {
     // Fetching categories from API
     async function getData() {
         try {
-            const baseURL = await axios.get("http://localhost:5000/categories");
+            const baseURL = await axios.get("https://uday-data.onrender.com/app/categories");
             setcategories(baseURL.data);
         } catch (error) {
             console.log(error, "error msg");
@@ -18,7 +18,6 @@ function Context({ children }) {
     }
 
     async function addWidget(category_id, widget_name, widget_text) {
-        // Create a copy of the categories state
         const updated_categories = [...categories];
         
         // Find the index of the category to update
@@ -26,7 +25,7 @@ function Context({ children }) {
             // console.log(cat.id, category_id)
             return cat.id === category_id});
 
-        console.log(category_id, categoryIndex)
+        // console.log(category_id, categoryIndex)
         if (categoryIndex !== -1) {
             // Retrieve the category and add the new widget
             const category = updated_categories[categoryIndex];
@@ -37,9 +36,10 @@ function Context({ children }) {
             };
     
             category.widgets.push(newWidget);
+            console.log("new category after updating widgets ", category)
     
             try {
-                const response = await axios.put(`http://localhost:5000/categories/${category_id}`, {
+                const response = await axios.put(`https://uday-data.onrender.com/app/categories/${category_id}`, {
                     ...category 
                 });
                 
@@ -54,21 +54,6 @@ function Context({ children }) {
         }
     }
 
-    // async function deleteWidget(category_id, widget_index) {
-    //     axios.delete(`http://localhost:5000/categories"/${category_id}/${widget_index}`)
-    //     .then(() => {
-    //         setcategories(categories.map(category => {
-    //             if (category.id === category_id){
-    //                 const updated_widgets = category.filter((_, widget_ind)=> widget_ind !== widget_index)
-    //                 return {...category,widgets:  updated_widgets}
-    //             }
-    //         }))
-    //       })
-    //       .catch(error => {
-    //         console.error("There was an error deleting widget", error);
-    //       });
-        
-    // }
 
     useEffect(() => {
         getData();

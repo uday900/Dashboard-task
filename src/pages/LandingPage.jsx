@@ -11,7 +11,7 @@ function LandingPage() {
     const [isactive_manage_widget, setisactive_manage_widget] = useState(false)
 
     const { categories, setcategories } = useContext(context);
-    console.log("data", categories)
+    // console.log("data", categories)
     const handleAddWidget = (i) => {
         setisactive_new_widget(true);
         setcategory_ind(i);
@@ -87,3 +87,4 @@ function LandingPage() {
 }
 
 export default LandingPage;
+

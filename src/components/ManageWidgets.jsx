@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './ManageWidgets.css';
 import { context } from '../Context';
 import axios from 'axios';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 function ManageWidgets({ setisactive_manage_widget }) {
     const { categories, setcategories} = useContext(context)
@@ -63,14 +63,46 @@ function ManageWidgets({ setisactive_manage_widget }) {
     };
 
     async function handleConfirm() {
-        console.log("actual ", categories)
-        console.log('Updated Categories:', dummy_categories);
+        // reflect widgets to dashboard....
+        try {
+            // Create an array of promises for the put requests
+            const response = await axios.get('https://uday-data.onrender.com/app/categories');
+            console.log("data is ", response.data)
+            console.log(dummy_categories)
+            const res = await axios.put('https://uday-data.onrender.com/app/categories', dummy_categories)
+            // const updatePromises = dummy_categories.map(category =>{
+            //     console.log("category", category);
+            //     axios.put(`https://uday-data.onrender.com/app/categories/${category.id}`, {
+            //         ...category
+            //     })
+            // }
+            // );
     
-        // axios.post('http://localhost:5000/categories', dummy_categories)
+            // // Await all promises to complete
+            // await Promise.all(updatePromises);
+    
+            // Optionally update the state here if needed
+            setcategories(dummy_categories);
 
-        setcategories(dummy_categories)
-        setisactive_manage_widget(false)
+            
+            console.log('Categories updated successfully');
+            // console.log(categories)
+            // console.log(dummy_categories)
+        } catch (error) {
+            console.error('Error updating categories:');
+        }
+
+        // reflect categories to dashboard....
+        try {
+            
+        } catch (error) {
+            
+        }
+    
+        // Close the manage widgets component
+        setisactive_manage_widget(false);
     }
+    
 
     const handleDeleteCategory = (id)=>{
         setdummy_categories(dummy_categories.filter((category)=>{
@@ -273,3 +305,6 @@ function ManageWidgets({ setisactive_manage_widget }) {
 }
 
 export default ManageWidgets;
+
+
+

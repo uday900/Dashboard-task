@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef, useEffect} from 'react';
 import './NewWidget.css';
 import { context } from '../Context';
 
@@ -14,11 +14,24 @@ function NewWidget({ setisactive_new_widget, category_index }) {
         setisactive_new_widget(false);
     }
 
+    const widgetNameRef = useRef(null); // Create a reference to the widget name input
+
+    useEffect(() => {
+        if (widgetNameRef.current) {
+            widgetNameRef.current.focus(); // Automatically focus the widget name input when the form opens
+        }
+    }, []);
+
+
     return (
-        <div className='NewWidget rounded border p-5'>
-            <div className="btn btn-default close-btn text-danger" onClick={() => setisactive_new_widget(false)}>
-                <i className="fa-regular fa-circle-xmark fa-lg"></i>
-            </div>
+        <div className='Newwidget-main'>
+            <div className='NewWidget rounded border p-5'>
+            <button
+                    className="close-btn"
+                    onClick={() => setisactive_new_widget(false)}
+                >
+                    <i className="fa-solid fa-xmark"></i>
+                </button>
             <form onSubmit={handleForm}>
                 <div>
                     <input type="text"
@@ -26,7 +39,9 @@ function NewWidget({ setisactive_new_widget, category_index }) {
                         className="form-control mb-3"
                         value={widget_name}
                         onChange={(e) => setwidget_name(e.target.value)}
-                        required />
+                        required
+                        ref={widgetNameRef}
+                         />
                 </div>
                 <div>
                     <input type="text"
@@ -39,7 +54,8 @@ function NewWidget({ setisactive_new_widget, category_index }) {
                 <button type="submit" className="btn btn-success">Add</button>
             </form>
         </div>
+        </div>
     );
 }
 
-export default NewWidget;
+export default NewWidget

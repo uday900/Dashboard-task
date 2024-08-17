@@ -5,17 +5,14 @@
       "category_name": "Programming",
       "widgets": [
         {
-          "widget_name": "C",
-          "widget_text": "lan"
+          "widget_name": "React",
+          "widget_text": "React is front-end frame work of JS"
         },
         {
           "widget_name": "c#",
           "widget_text": ".net programming"
-        },
-        {
-          "widget_name": "React",
-          "widget_text": "React is front-end frame work of JS"
         }
+       
       ]
     },
     {
