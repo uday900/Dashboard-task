@@ -18,7 +18,7 @@ function ManageWidgets({ setisactive_manage_widget }) {
     const [new_widget_text, setnew_widget_text] = useState("");
     const [popup, setpopup] = useState(false);
 
-    // Delete widget function
+    // Delete widget temporary  function
     function handleDelete(category_id, widget_index) {
         const updatedCategories = dummy_categories.map((category) => {
             if (category.id === category_id) {
@@ -31,7 +31,7 @@ function ManageWidgets({ setisactive_manage_widget }) {
     }
 
     
-
+    // adding new category
     const handleAddNewCategory = (event) => {
         event.preventDefault();
         const obj = {
@@ -43,7 +43,7 @@ function ManageWidgets({ setisactive_manage_widget }) {
         setdummy_categories([...dummy_categories, obj]);
         setnew_category_name(""); // Clear the input field
     };
-
+    // adding new widget
     const handleAddNewWidget = (event) => {
         event.preventDefault();
         const updatedCategories = dummy_categories.map((category) => {
@@ -62,6 +62,7 @@ function ManageWidgets({ setisactive_manage_widget }) {
         setnew_widget_text(""); // Clear the widget text input
     };
 
+    // adding all categories, widget permanantly
     async function handleConfirm() {
         // reflect widgets to dashboard....
         dummy_categories.forEach((category)=>{
@@ -118,7 +119,7 @@ function ManageWidgets({ setisactive_manage_widget }) {
         setisactive_manage_widget(false);
     }
     
-
+    // deleteing category temporaty
     const handleDeleteCategory = (id)=>{
         setdummy_categories(dummy_categories.filter((category)=>{
            return  category.id != id

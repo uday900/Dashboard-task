@@ -25,7 +25,7 @@ function SearchPage() {
         return matchingWidgets.length > 0;
     })
     // const matched_categories = dummy_categories
-    console.log("after", categories)
+    // console.log("after", categories)
   return (
     <div className="container-fluid border w-100 p-4 min-vh-100" style={{ backgroundColor: "rgb(240, 245, 250)" }}>
         {matched_categories.length == 0 ? <>No widget found </> :(

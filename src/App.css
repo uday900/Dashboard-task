@@ -18,3 +18,12 @@
 .search-box:hover{
   background: white;
 }
+
+@media (max-width: 480px) {
+  .search-bar{
+    /* display: none; */
+    width: 100%;
+  }
+}
+
+

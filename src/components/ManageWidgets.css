@@ -54,3 +54,13 @@
 .category-buttons{
     overflow: auto;
 }
+
+@media (max-width: 480px) {
+    .manage-widget-container{
+        /* position: absolute; */
+        left: 1%;
+        right: 2%;
+        width: 99%;
+
+    }
+  }

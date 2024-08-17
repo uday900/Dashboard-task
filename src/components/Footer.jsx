@@ -10,8 +10,9 @@ function Footer() {
           {/* Facebook */}
           <a
             className="btn btn-link btn-floating btn-lg text-body m-1"
-            href="#!"
+            href="https://www.facebook.com/udaykiran.darla.3?mibextid=ZbWKwL"
             role="button"
+            target='_blank'
           >
             <i className="fab fa-facebook-f"></i>
           </a>
@@ -19,26 +20,21 @@ function Footer() {
           {/* Twitter */}
           <a
             className="btn btn-link btn-floating btn-lg text-body m-1"
-            href="#!"
+            href="https://www.twitter.com"
             role="button"
+             target='_blank'
           >
             <i className="fab fa-twitter"></i>
           </a>
 
-          {/* Google */}
-          <a
-            className="btn btn-link btn-floating btn-lg text-body m-1"
-            href="#!"
-            role="button"
-          >
-            <i className="fab fa-google"></i>
-          </a>
+          
 
           {/* Instagram */}
           <a
             className="btn btn-link btn-floating btn-lg text-body m-1"
-            href="#!"
+            href="https://www.instagram.com/uday1709_?igsh=MTU1a2s4dWdlcWVmcQ=="
             role="button"
+             target='_blank'
           >
             <i className="fab fa-instagram"></i>
           </a>
@@ -46,8 +42,9 @@ function Footer() {
           {/* Linkedin */}
           <a
             className="btn btn-link btn-floating btn-lg text-body m-1"
-            href="#!"
+            href="https://www.linkedin.com/in/darla-uday-kiran-18a450239"
             role="button"
+             target='_blank'
           >
             <i className="fab fa-linkedin"></i>
           </a>
@@ -55,8 +52,9 @@ function Footer() {
           {/* Github */}
           <a
             className="btn btn-link btn-floating btn-lg text-body m-1"
-            href="#!"
+            href="https://github.com/uday900"
             role="button"
+             target='_blank'
           >
             <i className="fab fa-github"></i>
           </a>

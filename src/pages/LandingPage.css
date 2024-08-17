@@ -11,3 +11,9 @@
     color: blue;
     background-color: blue;
 }
+
+@media (max-width: 480px) {
+    .header{
+        flex-direction: column;
+    }
+}
